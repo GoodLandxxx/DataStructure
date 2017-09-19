@@ -6,7 +6,6 @@ using System.Text;
 namespace DataStructure
 {
     public class LinkedList
-
     {
     }
 }
