@@ -5,8 +5,7 @@ using System.Text;
 
 namespace DataStructure
 {
-    public class LinkedList
-
+    public class Class1
     {
     }
 }
