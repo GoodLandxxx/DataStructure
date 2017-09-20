@@ -8,21 +8,55 @@ namespace DataStructure
 {
     class BinarySearch
     {
-        public static int find (IComparable[] arr  ,int start,int end, IComparable target )
+        private static int FindRe(IComparable[] arr, int start, int end, IComparable target)
         {
-            int mid = start + (end -start ) / 2;
-            if (arr[mid].CompareTo(target) == 0)
+            int mid = start + (end - start) / 2;
+            int flag = arr[mid].CompareTo(target);
+            if (flag == 0)
                 return mid;
-            if (arr[mid].CompareTo(target) > 0)
-                return find(arr, start, mid - 1, target);
+            if (flag > 0)
+                return FindRe(arr, start, mid - 1, target);
             else
-                return find(arr, start, mid - 1, target);
+                return FindRe(arr, mid+1, end, target);
         }
 
         public static int find(IComparable[] arr, IComparable target)
         {
 
-            return find(arr, 0, arr.Length - 1, target);
+            return FindRe(arr, 0, arr.Length - 1, target);
+        }
+        public static int Find(IComparable[] arr, IComparable target)
+        {
+
+            return Find(arr, 0, arr.Length - 1, target);
+        }
+        private static int Find(IComparable[] arr, int start, int end, IComparable target)
+        {
+            int mid = start + (end - start) / 2;
+            int flag = arr[mid].CompareTo(target);
+            if (flag == 0)
+            {
+                return mid;
+            }
+
+            while (true)
+            {
+                if (flag > 0)
+                {
+                    mid = (start + mid - 1) / 2;
+                    flag = arr[mid].CompareTo(target);
+                    if (flag == 0)
+                        return mid;
+                }
+                else
+                {
+                    mid = (mid + 1 + start) / 2;
+                    flag = arr[mid].CompareTo(target);
+                    if (flag == 0)
+                        return mid;
+                }
+            }
+            
         }
     }
 }
