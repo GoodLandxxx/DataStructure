@@ -1,5 +1,4 @@
-﻿using System.Resources;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -11,10 +10,17 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("DataStructure")]
-[assembly: AssemblyCopyright("版权所有(C)  2017")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: NeutralResourcesLanguage("zh-Hans")]
+
+//将 ComVisible 设置为 false 将使此程序集中的类型
+//对 COM 组件不可见。  如果需要从 COM 访问此程序集中的类型，
+//请将此类型的 ComVisible 特性设置为 true。
+[assembly: ComVisible(false)]
+
+// 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
+[assembly: Guid("0183c586-1586-44ee-bcf0-b40182aa89f6")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
