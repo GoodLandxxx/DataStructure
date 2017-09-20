@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class BinarySearch
+    public class BinarySearch
     {
         private static int FindRe(IComparable[] arr, int start, int end, IComparable target)
         {
@@ -19,6 +19,7 @@ namespace DataStructure
             else
                 return FindRe(arr, mid+1, end, target);
         }
+
 
         public static int find(IComparable[] arr, IComparable target)
         {
@@ -43,17 +44,23 @@ namespace DataStructure
             {
                 if (flag > 0)
                 {
-                    mid = (start + mid - 1) / 2;
+                    end = mid;
+                    mid = (start + end - 1) / 2;
                     flag = arr[mid].CompareTo(target);
                     if (flag == 0)
                         return mid;
+                    if (flag < 0)
+                        start = 0;
+                    
                 }
                 else
                 {
-                    mid = (mid + 1 + start) / 2;
+                    start = mid;
+                    mid = (mid + 1 + end) / 2;
                     flag = arr[mid].CompareTo(target);
                     if (flag == 0)
                         return mid;
+                   
                 }
             }
             
