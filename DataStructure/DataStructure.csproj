@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearch.cs" />
+    <Compile Include="BST.cs" />
     <Compile Include="BTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
