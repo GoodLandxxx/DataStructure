@@ -21,7 +21,7 @@ namespace DataStructure
         }
 
 
-        public static int find(IComparable[] arr, IComparable target)
+        public static int FindRe(IComparable[] arr, IComparable target)
         {
 
             return FindRe(arr, 0, arr.Length - 1, target);
