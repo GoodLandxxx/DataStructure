@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    public class BST<Key , Value> where Key :IComparable where Value:IComparable
+    public class BST<Key, Value> where Key : IComparable where Value : IComparable
     {
         private class Node
         {
             public Key key;
             public Value value;
             public Node right, left;
-            public Node(Key key ,Value value)
+            public Node(Key key, Value value)
             {
                 this.key = key;
                 this.value = value;
@@ -21,15 +21,27 @@ namespace DataStructure
             }
 
         }
+        public class KeyLengthEqualValueLength : Exception
+        {
+            public override string Message
+            {
+                get
+                {
+                    return "The Length of key  not Equal The Length of Value";
+                }
+            }
+        }
         private Node root;  // 根节点
         private int count;  // 树种的节点个数
-
+        StringBuilder PreOrderSting = new StringBuilder();
+        StringBuilder InOrderSting = new StringBuilder();
+        StringBuilder PostOrderSting = new StringBuilder();
         public BST()
         {
             root = null;
             count = 0;
         }
-        public int  Size()
+        public int Size()
         {
             return count;
         }
@@ -37,7 +49,65 @@ namespace DataStructure
         {
             return count == 0;
         }
-        public void Insert(Key key ,Value value)
+        public void CreateTree(Key[] keys, Value[] values)
+        {
+
+            if (root == null)
+            {
+                root = new Node(keys[0], values[0]);
+            }
+            if (keys.Length != values.Length)
+            { throw new KeyLengthEqualValueLength(); }
+
+            for (int i = 1; i < keys.Length; i++)
+            {
+                Node temp = root;
+                while (true)
+                {
+                    Node temp1 = temp.right;
+                    Node temp2 = temp.left;
+                    if (keys[i].CompareTo(temp.key) == 0)
+                        break;
+                        if (keys[i].CompareTo(temp.key) > 0)
+                    {
+                        
+                        //
+                        //Node tempTest = temp;
+                        if (temp1 == null)
+                        {
+                            temp.right = new Node(keys[i], values[i]);
+                            
+                            break;
+                        }
+                        
+                        temp = temp.right;
+                    }
+                    if (keys[i].CompareTo(temp.key) <0)
+                    {
+                        
+                        //temp = temp.left;
+                        //Node tempTest = temp;
+                        if (temp2 == null)
+                        {
+                            temp.left = new Node(keys[i], values[i]);
+                             break;
+                        }
+                        temp = temp.left;
+                    }
+
+                }
+            }
+        }
+
+
+
+
+        /// <summary>
+        /// 插入节点
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="value">值</param>
+        public void Insert(Key key, Value value)
         {
             root = Insert(root, key, value);
         }
@@ -73,7 +143,7 @@ namespace DataStructure
         /// <param name="node">根节点</param>
         /// <param name="key">键</param>
         /// <returns>布尔值</returns>
-        private Boolean Contain(Node node,Key key )
+        private Boolean Contain(Node node, Key key)
         {
             if (node == null)
                 return false;
@@ -99,14 +169,14 @@ namespace DataStructure
         {
             return Search(root, key);
         }
-        private Value Search(Node node,Key key)
+        private Value Search(Node node, Key key)
         {
             if (node == null)
                 return default(Value);
-            int flag=  node.key.CompareTo(key);
+            int flag = node.key.CompareTo(key);
             if (flag == 0)
             { return node.value; }
-            if(flag > 0)
+            if (flag > 0)
             {
                 return Search(node.left, key);
             }
@@ -115,21 +185,77 @@ namespace DataStructure
                 return Search(node.right, key);
             }
         }
+        /// <summary>
+        ///  
+        /// 二叉搜索树的前序遍历
+        /// 
+        /// </summary>
+        /// <returns>前序遍历的字符串</returns>
+        public string PreOrder()
+        {
+            PreOrderSting.Clear();
+            PreOrder(root);
+            return PreOrderSting.ToString();
+
+        }
+
+        private void PreOrder(Node node)
+        {
+            if (node != null)
+            {
+                PreOrderSting.Append(node.key + "-");
+                PreOrder(node.left);
+                PreOrder(node.right);
+            }
+        }
+
+        /// <summary>
+        ///  
+        /// 二叉搜索树的中序遍历
+        /// 
+        /// </summary>
+        /// <returns>中序遍历的字符串</returns>
+        public string InOrder()
+        {
+            InOrderSting.Clear();
+            InOrder(root);
+            return InOrderSting.ToString();
+        }
+        private void InOrder(Node node)
+        {
+            if (node != null)
+            {
+                InOrder(node.left);
+                InOrderSting.Append(node.key + "-");
+                InOrder(node.right);
+            }
+        }
+
+
+        /// <summary>
+        ///  
+        /// 二叉搜索树的后序遍历
+        /// 
+        /// </summary>
+        /// <returns>后序遍历的字符串</returns>
+        public string PostOrder()
+        {
+            PostOrderSting.Clear();
+            PostOrder(root);
+            return PostOrderSting.ToString();
+
+        }
+
+        private void PostOrder(Node node)
+        {
+            if (node != null)
+            {
+                PostOrder(node.left);
+
+                PostOrder(node.right);
+                PostOrderSting.Append(node.key + "-");
+            }
+        }
     }
-    //public class Key :IComparable<Key>
-    //{
-    //    public int CompareTo(Key obj)
-    //    {
-    //        return CompareTo(obj);
-    //        throw new NotImplementedException();
-    //    }
-    //}
-    //public class Value : IComparable
-    //{
-    //    public int CompareTo(object obj)
-    //    {
-    //        return CompareTo(obj);
-    //        throw new NotImplementedException();
-    //    }
-    //}
+
 }
