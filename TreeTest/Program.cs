@@ -12,11 +12,12 @@ namespace TreeTest
     {
         static void Main(string[] args)
         {
-            int N = 10;
+            int N = 20;
 
             // 创建一个数组，包含[0...N)的所有元素
             int[] arr2 = new int[N];
             int[] arr = new int[N];
+            Stopwatch sw = new Stopwatch();
             string[] Srr = new string[N];
             for (int i = 0; i < N; i++)
             {   arr2[i] = i;
@@ -41,19 +42,25 @@ namespace TreeTest
             // 键值的对应关系为每个整型对应代表这个整型的字符串
             BST<int, String> bst = new BST<int, String>();
             BST<int, String> bst2 = new BST<int, String>();
+            sw.Start();
             for (int i = 0; i < N; i++)
             {
                 bst.Insert(arr[i], arr[i].ToString());
-                bst2.CreateTree(arr,Srr);
             }
-            
+            sw.Stop(); TimeSpan ts10 = sw.Elapsed; sw.Restart(); Console.WriteLine(" one time is {0}", ts10.TotalMilliseconds);
+
+            sw.Start();
+            bst2.CreateBinarySearchTree(arr, Srr);
+            sw.Stop(); TimeSpan ts2 = sw.Elapsed; sw.Restart(); Console.WriteLine(" two time is {0}", ts2.TotalMilliseconds);
+
             Console.WriteLine(bst.PreOrder());
             Console.WriteLine(bst.InOrder());
             Console.WriteLine(bst.PostOrder());
-
-            Console.WriteLine(bst2.PreOrder());
-            Console.WriteLine(bst2.InOrder());
-            Console.WriteLine(bst2.PostOrder());
+            int sf =Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(bst.Ceil(sf) );
+            Console.WriteLine(bst.PreOrder());
+            Console.WriteLine(bst.InOrder());
+            Console.WriteLine(bst.PostOrder());
 
             // 对[0...2*N)的所有整型测试在二分搜索树中查找
             // 若i在[0...N)之间，则能查找到整型所对应的字符串
