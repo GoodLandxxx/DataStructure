@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace DataStructure
 {
     public class BinarySearch
-    {
+    { 
         private static int FindRe(IComparable[] arr, int start, int end, IComparable target)
         {
+			
             int mid = start + (end - start) / 2;
             int flag = arr[mid].CompareTo(target);
             if (flag == 0)

@@ -10,6 +10,7 @@ namespace DataStructure
     {
         public class Node
         {
+
             public Key key;
             public Value value;
             public Node next;

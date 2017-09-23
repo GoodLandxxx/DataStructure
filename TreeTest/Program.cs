@@ -52,6 +52,7 @@ namespace TreeTest
             sw.Start();
             bst2.CreateBinarySearchTree(arr, Srr);
             sw.Stop(); TimeSpan ts2 = sw.Elapsed; sw.Restart(); Console.WriteLine(" two time is {0}", ts2.TotalMilliseconds);
+             
 
             Console.WriteLine(bst.PreOrder());
             Console.WriteLine(bst.InOrder());

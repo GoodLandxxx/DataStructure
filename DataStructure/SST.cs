@@ -15,6 +15,7 @@ namespace DataStructure
             public Node next;
             public Node(Key key, Value value)
             {
+				
                 this.key = key;
                 this.value = value;
                 this.next = null;

@@ -18,14 +18,13 @@ namespace DataStructure
             this.value = v;
             this.left = null;
             this.right = null;
-            this.parent = null;
+            this.parent = null; 
+
         }
         public static BTree createMinimalBT(BTree root, int[] array, int start, int end)
         {
             try
             {
-              
-            
             if(start >= 0 && array.Length-1 >= end && end >= start)
             {
                 BTree.count++;

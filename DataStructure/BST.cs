@@ -8,7 +8,7 @@ namespace DataStructure
 {
     public class BST<Key, Value> where Key : IComparable where Value : IComparable
     {
-        //ConparaTo >0 big, <0 smart , =0 equal
+        //ConparaTo >0 big, <0 smart , =0 equalS
         #region Private Class Of The Binary Seach Tree  二叉搜索树的私有类
         private class Node
         {
