@@ -57,7 +57,10 @@ namespace TreeTest
             Console.WriteLine(bst.PreOrder());
             Console.WriteLine(bst.InOrder());
             Console.WriteLine(bst.PostOrder());
-            int sf =Convert.ToInt32(Console.ReadLine());
+           
+            Console.WriteLine("BFS" +bst.BFS());
+            Console.WriteLine("DFS" +bst.DFS());
+            int sf = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(bst.Ceil(sf) );
             Console.WriteLine(bst.PreOrder());
             Console.WriteLine(bst.InOrder());

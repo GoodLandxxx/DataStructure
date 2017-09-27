@@ -49,7 +49,7 @@ namespace DataStructure
             InOrderSting = new StringBuilder("中序遍历:");
             PostOrderSting = new StringBuilder("后序遍历:");
             BFSString = new StringBuilder("广度优先遍历:");
-            DFSString = new StringBuilder("广度优先遍历:");
+            DFSString = new StringBuilder("深度优先遍历:");
             Interval = ">";
             root = null;
             count = 0;
@@ -122,6 +122,22 @@ namespace DataStructure
             if (count == 0 || key.CompareTo(MaxNode(root).key) > 0) 
                 return default(Key);
             return Ceil(root, key).key;
+        }
+        public Key Floor(Key key)
+        {
+            if (count == 0 || key.CompareTo(MaxNode(root).key) < 0)
+                return default(Key);
+            return Floor(root, key).key;
+        }
+        public string DFS()
+        {
+            this.DFS(root);
+            return DFSString.ToString();
+        }
+        public string BFS()
+        {
+            this.BFS(root);
+            return BFSString.ToString();
         }
         #region    The private function of the binary tree 二叉树私有函数  
         /// <summary>
@@ -273,6 +289,16 @@ namespace DataStructure
                 PostOrderSting.Append(Interval + node.key);
             }
         }
+        private void Destory(Node node)
+        {
+            if (node != null)
+            {
+                PostOrder(node.left);
+                PostOrder(node.right);
+                node= null;
+                count--;
+            }
+        }
 
         /// <summary>
         /// 最大值
@@ -365,14 +391,14 @@ namespace DataStructure
             }
         }
 
-        private void BFS()
+        private void BFS(Node node)
         {
             Queue<Node> QueueOfNode = new Queue<Node> { };
             QueueOfNode.Enqueue(root);
             while (QueueOfNode.Count != 0)
             {
                 Node TempNode = QueueOfNode.Dequeue();
-                BFSString.Append(TempNode.key);
+                BFSString.Append(TempNode.key + "->");
                 if (TempNode.left != null)
                 {
                     QueueOfNode.Enqueue(TempNode.left);
@@ -384,14 +410,14 @@ namespace DataStructure
 
             }
         }
-        private void DFS()
+        private void DFS(Node node)
         {
             Stack<Node> StackOfNode = new Stack<Node>() { };
             StackOfNode.Push(root);
             while(StackOfNode.Count!=0)
             {
                 Node TempNode = StackOfNode.Pop();
-                DFSString.Append(TempNode.key);
+                DFSString.Append(TempNode.key + "->");
                 if(TempNode.right!=null)
                 {
                     StackOfNode.Push(TempNode.right);
@@ -418,24 +444,23 @@ namespace DataStructure
             return null;
         }
 
-        private Key floor(Node node ,Key key)
+        private Node Floor(Node node, Key key)
         {
-            
-            while (node != null)
+
+            int flag = key.CompareTo(node.key);
+            if (flag == 0)
+                return node;
+            if (flag < 0)
             {
-                int flag = key.CompareTo(node.key);
-                if (flag < 0)
-                {
-                    node = node.left;
-                }
-                else
-                {
-                    return node.key;
-                }
+                return Ceil(node.left, key);
             }
-            return default(Key);
+            Node tempNode = Ceil(node.right, key);
+            if (tempNode != null)
+                return tempNode;
+
+            return null;
         }
-        #endregion
-    }
+            #endregion
+        }
 
 }
