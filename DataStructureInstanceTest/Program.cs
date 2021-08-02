@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataStructure;
-using System.IO;
 using System.Diagnostics;
-namespace TreeTest
+using System.IO;
+using DataStructure;
+namespace DataStructureInstanceTest
 {
     class Program
     {
         static void Main(string[] args)
         {
+
+            int[] arrf = new int[] { 9,8,7,6,5,4,3,2,1};
+            var sf = Util.IsSortForInt(arrf, OrderBy.Desc);
+
             int N = 20;
 
             // 创建一个数组，包含[0...N)的所有元素
@@ -20,14 +20,15 @@ namespace TreeTest
             Stopwatch sw = new Stopwatch();
             string[] Srr = new string[N];
             for (int i = 0; i < N; i++)
-            {   arr2[i] = i;
+            {
+                arr2[i] = i;
                 Srr[i] = i.ToString();
             }
             // 打乱数组顺序
             Random s = new Random();
             for (int i = 0; i < N; i++)
             {
-                int j = s.Next(0,N);
+                int j = s.Next(0, N);
                 arr[i] = arr2[j];
                 Srr[i] = arr2[j].ToString();
 
@@ -52,16 +53,16 @@ namespace TreeTest
             sw.Start();
             bst2.CreateBinarySearchTree(arr, Srr);
             sw.Stop(); TimeSpan ts2 = sw.Elapsed; sw.Restart(); Console.WriteLine(" two time is {0}", ts2.TotalMilliseconds);
-             
+
 
             Console.WriteLine(bst.PreOrder());
             Console.WriteLine(bst.InOrder());
             Console.WriteLine(bst.PostOrder());
-           
-            Console.WriteLine("BFS" +bst.BFS());
-            Console.WriteLine("DFS" +bst.DFS());
-            int sf = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(bst.Ceil(sf) );
+
+            Console.WriteLine("BFS" + bst.BFS());
+            Console.WriteLine("DFS" + bst.DFS());
+            //int sf = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine(bst.Ceil(sf));
             Console.WriteLine(bst.PreOrder());
             Console.WriteLine(bst.InOrder());
             Console.WriteLine(bst.PostOrder());
@@ -133,6 +134,4 @@ namespace TreeTest
         }
 
     }
-
-
 }
