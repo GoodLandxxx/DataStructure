@@ -7,8 +7,8 @@
     <ProjectGuid>{A38079E1-8DDA-470E-ACB8-8848DBBC84AF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TreeTest</RootNamespace>
-    <AssemblyName>TreeTest</AssemblyName>
+    <RootNamespace>DataStructureInstanceTest</RootNamespace>
+    <AssemblyName>DataStructureInstanceTest</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -33,15 +33,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup> 
+  <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <Folder Include="Sort\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinarySearch.cs" />
-    <Compile Include="BST.cs" />
-    <Compile Include="BTree.cs" />
-    <Compile Include="DST.cs" />
-    <Compile Include="SST.cs" />
+    <Compile Include="Tree\BinarySearch.cs" />
+    <Compile Include="Tree\BST.cs" />
+    <Compile Include="Tree\BTree.cs" />
+    <Compile Include="Tree\DST.cs" />
+    <Compile Include="Tree\SST.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
