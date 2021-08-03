@@ -53,9 +53,10 @@ namespace DataStructure.Sort
                         arr[j + 1] = temp;
                         isExchange = true;
                     }
-                    if (!isExchange)
-                        break;
+                    
                 }
+                if (!isExchange)
+                    break;
             }
             return Util.GetTimeSpan(perTime);
         }

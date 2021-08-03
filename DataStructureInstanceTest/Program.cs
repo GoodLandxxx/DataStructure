@@ -12,13 +12,13 @@ namespace DataStructureInstanceTest
 
             int[] arrf = new int[] { 9,8,7,6,5,4,3,2,1};
             int[] arrff = new int[10];
-            arrf = Util.GenerateNearlyOrderedArray(50000,2 );
-            arrff = Util.GenerateNearlyOrderedArray(50000, 2); 
+            arrf = Util.GenerateNearlyOrderedArray(1000,1 );
+            arrff = Util.GenerateNearlyOrderedArray(1000,1); 
             var v1  = BubbleSort.BubbleSortFunc(arrf);
             var isSort = Util.IsSortForInt(arrf);
 
             var v2 = BubbleSort.BubbleSortFuncOpt(arrff);
-            isSort = Util.IsSortForInt(arrf);
+            isSort = Util.IsSortForInt(arrff);
             int N = 20;
             //
 

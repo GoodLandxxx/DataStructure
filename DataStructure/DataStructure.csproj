@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Sort\BubbleSort.cs" />
+    <Compile Include="Sort\SelectionSort.cs" />
     <Compile Include="Tree\BinarySearch.cs" />
     <Compile Include="Tree\BST.cs" />
     <Compile Include="Tree\BTree.cs" />
