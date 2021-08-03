@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using DataStructure;
+using DataStructure.Sort;
 namespace DataStructureInstanceTest
 {
     class Program
@@ -10,8 +11,14 @@ namespace DataStructureInstanceTest
         {
 
             int[] arrf = new int[] { 9,8,7,6,5,4,3,2,1};
-            var sf = Util.IsSortForInt(arrf, OrderBy.Desc);
+            int[] arrff = new int[10];
+            arrf = Util.GenerateNearlyOrderedArray(50000,2 );
+            arrff = Util.GenerateNearlyOrderedArray(50000, 2); 
+            var v1  = BubbleSort.BubbleSortFunc(arrf);
+            var isSort = Util.IsSortForInt(arrf);
 
+            var v2 = BubbleSort.BubbleSortFuncOpt(arrff);
+            isSort = Util.IsSortForInt(arrf);
             int N = 20;
             //
 

@@ -35,9 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="Sort\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Tree\BinarySearch.cs" />
     <Compile Include="Tree\BST.cs" />
     <Compile Include="Tree\BTree.cs" />
