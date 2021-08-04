@@ -18,12 +18,6 @@ namespace DataStructure.Sort
             {
                 int position ;
                 int val = arr[i];
-                //while (position > 0 &&  arr[position - 1] >val)
-                //{
-                //    arr[position] = arr[position - 1];
-                //    position--;
-                //    o++;
-                //}
                 for(position =i; position > 0 && arr[position-1] >val; position--)
                 {
                     arr[position] = arr[position - 1];
@@ -53,5 +47,6 @@ namespace DataStructure.Sort
             return o;
             //return Util.GetTimeSpan(startTime);
         }
+
     }
 }

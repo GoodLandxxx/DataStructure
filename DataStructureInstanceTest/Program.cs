@@ -32,6 +32,8 @@ namespace DataStructureInstanceTest
             var isSort4 = Util.IsSortForInt(A4);
             var v5 = InsertionSort.InsertionSortFuncOpt(A5);
             var isSort5 = Util.IsSortForInt(A5);
+            var A6 = new int[] { 0, 1, 2, 3, 9, 5, 6, 7 };
+            var sfzx = Sort.BinarySearch(A6, 2, 9);
             int N = 20;
             //
 
