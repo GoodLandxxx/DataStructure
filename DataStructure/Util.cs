@@ -74,7 +74,6 @@ namespace DataStructure
             return  now - PerTime;
 
         }
-        
     }
     public enum OrderBy
     {

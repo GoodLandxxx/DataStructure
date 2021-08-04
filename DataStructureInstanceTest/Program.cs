@@ -10,15 +10,28 @@ namespace DataStructureInstanceTest
         static void Main(string[] args)
         {
 
-            int[] arrf = new int[] { 9,8,7,6,5,4,3,2,1};
-            int[] arrff = new int[10];
-            arrf = Util.GenerateNearlyOrderedArray(1000,1 );
-            arrff = Util.GenerateNearlyOrderedArray(1000,1); 
-            var v1  = BubbleSort.BubbleSortFunc(arrf);
-            var isSort = Util.IsSortForInt(arrf);
+            int[] A1 = new int[] { };
+            int[] A2= new int[] { };
+            int[] A3 = new int[] { };
+            int[] A4 = new int[] { };
+            int[] A5 = new int[] { };
+            A1 = Util.GenerateRandomArray(10000,1 ,5000);
+            A2 = Util.GenerateRandomArray(10000,1,5000);
+            A3 = Util.GenerateRandomArray(10000, 1, 5000);
+            var v1  = BubbleSort.BubbleSortFunc(A1);
+            var isSort = Util.IsSortForInt(A1);
 
-            var v2 = BubbleSort.BubbleSortFuncOpt(arrff);
-            isSort = Util.IsSortForInt(arrff);
+            var v2 = BubbleSort.BubbleSortFuncOpt(A2);
+            var isSort2 = Util.IsSortForInt(A2);
+            var v3 = SelectionSort.SelectionSortFunc(A3);
+            var isSort3 = Util.IsSortForInt(A3);
+            
+            A4 = Util.GenerateNearlyOrderedArray(10000, 5);
+            A5 = Util.GenerateNearlyOrderedArray(10000, 5);
+            var v4 = InsertionSort.InsertionSortFunc(A4);
+            var isSort4 = Util.IsSortForInt(A4);
+            var v5 = InsertionSort.InsertionSortFuncOpt(A5);
+            var isSort5 = Util.IsSortForInt(A5);
             int N = 20;
             //
 

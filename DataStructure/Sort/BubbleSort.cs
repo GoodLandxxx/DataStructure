@@ -15,7 +15,7 @@ namespace DataStructure.Sort
         /// <returns></returns>
         public static TimeSpan BubbleSortFunc(int[] arr)
         {
-            var perTime = DateTime.Now;
+            var startTime = DateTime.Now;
             int n = arr.Length;
             for (int i = n - 1; i > -1; i--)
             {
@@ -29,7 +29,7 @@ namespace DataStructure.Sort
                     }
                 }
             }
-            return Util.GetTimeSpan(perTime);            
+            return Util.GetTimeSpan(startTime);            
         }
 
         /// <summary>
@@ -37,9 +37,9 @@ namespace DataStructure.Sort
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
-        public static TimeSpan BubbleSortFuncOpt(int[] arr)
+        public static TimeSpan BubbleSortFuncOpt(int[] arr )
         {
-            var perTime = DateTime.Now;
+            var startTime = DateTime.Now;
             int n = arr.Length;
             bool isExchange = false;
             for (int i = n - 1; i > -1; i--)
@@ -58,7 +58,7 @@ namespace DataStructure.Sort
                 if (!isExchange)
                     break;
             }
-            return Util.GetTimeSpan(perTime);
+            return Util.GetTimeSpan(startTime);
         }
 
     }
