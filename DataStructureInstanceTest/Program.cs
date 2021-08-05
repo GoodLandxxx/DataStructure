@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using DataStructure;
@@ -10,30 +11,64 @@ namespace DataStructureInstanceTest
         static void Main(string[] args)
         {
 
-            int[] A1 = new int[] { };
-            int[] A2= new int[] { };
-            int[] A3 = new int[] { };
-            int[] A4 = new int[] { };
-            int[] A5 = new int[] { };
-            A1 = Util.GenerateRandomArray(10000,1 ,5000);
-            A2 = Util.GenerateRandomArray(10000,1,5000);
-            A3 = Util.GenerateRandomArray(10000, 1, 5000);
-            var v1  = BubbleSort.BubbleSortFunc(A1);
-            var isSort = Util.IsSortForInt(A1);
 
-            var v2 = BubbleSort.BubbleSortFuncOpt(A2);
-            var isSort2 = Util.IsSortForInt(A2);
-            var v3 = SelectionSort.SelectionSortFunc(A3);
-            var isSort3 = Util.IsSortForInt(A3);
+            const int count = 50000;
+            int max = 100000;
+            int arrCout = 10;
+            int[] A = new int[count];
+            int[] B = new int[count];
+            List<int[]> listA = new List<int[]>() { };
+            List<int[]> listB = new List<int[]>() { };
+            for (int i = 0; i < arrCout; i++)
+            {
+
+                listA.Add(new int[count]);
+                listB.Add(new int[count]);
+            }
+            A = Util.GenerateRandomArray(count, 0, max);
+            B = Util.GenerateNearlyOrderedArray(count, arrCout);
+            for (int i = 0; i < listA.Count; i++)
+            {
+
+                A.CopyTo(listA[i], 0);
+                B.CopyTo(listB[i], 0);
+
+            }
             
-            A4 = Util.GenerateNearlyOrderedArray(10000, 5);
-            A5 = Util.GenerateNearlyOrderedArray(10000, 5);
-            var v4 = InsertionSort.InsertionSortFunc(A4);
-            var isSort4 = Util.IsSortForInt(A4);
-            var v5 = InsertionSort.InsertionSortFuncOpt(A5);
-            var isSort5 = Util.IsSortForInt(A5);
-            var A6 = new int[] { 0, 1, 2, 3, 9, 5, 6, 7 };
-            var sfzx = Sort.BinarySearch(A6, 2, 9);
+
+            var v0 = BubbleSort.BubbleSortFunc(listA[0]);
+            var isSort = Util.IsSortForInt(listA[0]);
+            Console.WriteLine($"BubbleSortFunc --{v0} -/mulriple = {v0.TotalSeconds*1000},---{isSort} ");
+
+            v0 = BubbleSort.BubbleSortFuncOpt(listA[1]);
+            isSort = Util.IsSortForInt(listA[1]);
+            Console.WriteLine($"BubbleSortFuncOpt ----{v0} -/mulriple = {v0.TotalSeconds * 1000},---{isSort} ");
+
+            v0 = InsertionSort.InsertionSortFunc(listA[2]);
+            isSort = Util.IsSortForInt(listA[2]);
+            Console.WriteLine($"InsertionSortFunc ----{v0}-/mulriple = {v0.TotalSeconds * 1000}---{isSort} ");
+
+            v0 = InsertionSort.InsertionSortFunc(listA[3]);
+            isSort = Util.IsSortForInt(listA[3]);
+            Console.WriteLine($"InsertionSortFunc ----{v0}-/mulriple = {v0.TotalSeconds * 1000}---{isSort} ");
+
+            v0 = InsertionSort.InsertionSortFuncOpt(listA[4]);
+            isSort = Util.IsSortForInt(listA[4]);
+            Console.WriteLine($"InsertionSortFuncOpt ----{v0} -/mulriple = {v0.TotalSeconds * 1000} ---{isSort} ");
+
+            v0 = ShellSort.ShellSortFunc(listA[5],3);
+            isSort = Util.IsSortForInt(listA[5]);
+            
+            Console.WriteLine($"ShellSortFunc ----{v0} -/mulriple = {v0.TotalSeconds * 1000} ---{isSort} ");
+            v0 = ShellSort.ShellSortFunc(listA[6], 2);
+            isSort = Util.IsSortForInt(listA[6]);
+            Console.WriteLine($"ShellSortFunc ----{v0} -/mulriple = {v0.TotalSeconds * 1000} ---{isSort} ");
+            v0 = ShellSort.ShellSortFunc(listA[7], 4);
+            isSort = Util.IsSortForInt(listA[7]);
+            Console.WriteLine($"ShellSortFunc ----{v0} -/mulriple = {v0.TotalSeconds * 1000} ---{isSort} ");
+            v0 = ShellSort.ShellSortFunc(listA[8], 5);
+            isSort = Util.IsSortForInt(listA[8]);
+            Console.WriteLine($"ShellSortFunc ----{v0} -/mulriple = {v0.TotalSeconds * 1000} ---{isSort} ");
             int N = 20;
             //
 

@@ -40,6 +40,7 @@
     <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Sort\InsertionSorts.cs" />
     <Compile Include="Sort\SelectionSort.cs" />
+    <Compile Include="Sort\ShellSort.cs" />
     <Compile Include="Sort\Sort.cs" />
     <Compile Include="Tree\BinarySearch.cs" />
     <Compile Include="Tree\BST.cs" />

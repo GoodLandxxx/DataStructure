@@ -12,7 +12,6 @@ namespace DataStructure.Sort
         {
 
             int left =0, right = 0;
-            size = -1;
             while (left <= right)
             {
                 int mid = left + right >> 1;

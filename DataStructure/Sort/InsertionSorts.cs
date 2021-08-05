@@ -9,7 +9,7 @@ namespace DataStructure.Sort
     public class InsertionSort
     {
 
-        public static int InsertionSortFuncOpt(int[] arr)
+        public static TimeSpan InsertionSortFuncOpt(int[] arr)
         {
 
             var startTime = DateTime.Now;
@@ -25,12 +25,11 @@ namespace DataStructure.Sort
                 }
                 arr[position] = val;
             }
-            
 
-            return o;
+            return Util.GetTimeSpan(startTime); ;
         }
 
-        public static int InsertionSortFunc(int[] arr)
+        public static TimeSpan InsertionSortFunc(int[] arr)
         {
             var startTime = DateTime.Now;
             int o = 1;
@@ -44,8 +43,8 @@ namespace DataStructure.Sort
                     o++;
                 }
             }
-            return o;
-            //return Util.GetTimeSpan(startTime);
+            //return o;
+            return Util.GetTimeSpan(startTime);
         }
 
     }
