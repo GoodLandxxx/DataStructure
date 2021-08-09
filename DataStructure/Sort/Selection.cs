@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure.Sort
 {
-    public class SelectionSort :Sort
+    public class Selection :Sort
     {
 
         public static TimeSpan SelectionSortFunc(int[] arr)

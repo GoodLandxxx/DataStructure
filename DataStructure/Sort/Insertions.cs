@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace DataStructure.Sort
 {
     public class InsertionSort
-    {
+    { 
+
 
         public static TimeSpan InsertionSortFuncOpt(int[] arr)
         {

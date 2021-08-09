@@ -11,6 +11,7 @@ namespace DataStructureInstanceTest
         static void Main(string[] args)
         {
 
+           
 
             const int count = 50000;
             int max = 100000;
@@ -34,13 +35,14 @@ namespace DataStructureInstanceTest
                 B.CopyTo(listB[i], 0);
 
             }
-            
 
-            var v0 = BubbleSort.BubbleSortFunc(listA[0]);
+            var array = new int[10] { 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, };
+            Merge.MergeSort(array);
+            var v0 = Bubble.BubbleSortFunc(listA[0]);
             var isSort = Util.IsSortForInt(listA[0]);
             Console.WriteLine($"BubbleSortFunc --{v0} -/mulriple = {v0.TotalSeconds*1000},---{isSort} ");
 
-            v0 = BubbleSort.BubbleSortFuncOpt(listA[1]);
+            v0 = Bubble.BubbleSortFuncOpt(listA[1]);
             isSort = Util.IsSortForInt(listA[1]);
             Console.WriteLine($"BubbleSortFuncOpt ----{v0} -/mulriple = {v0.TotalSeconds * 1000},---{isSort} ");
 
@@ -56,9 +58,7 @@ namespace DataStructureInstanceTest
             isSort = Util.IsSortForInt(listA[4]);
             Console.WriteLine($"InsertionSortFuncOpt ----{v0} -/mulriple = {v0.TotalSeconds * 1000} ---{isSort} ");
 
-            v0 = ShellSort.ShellSortFunc(listA[5],3);
-            isSort = Util.IsSortForInt(listA[5]);
-            
+          
             Console.WriteLine($"ShellSortFunc ----{v0} -/mulriple = {v0.TotalSeconds * 1000} ---{isSort} ");
             v0 = ShellSort.ShellSortFunc(listA[6], 2);
             isSort = Util.IsSortForInt(listA[6]);
@@ -69,6 +69,14 @@ namespace DataStructureInstanceTest
             v0 = ShellSort.ShellSortFunc(listA[8], 5);
             isSort = Util.IsSortForInt(listA[8]);
             Console.WriteLine($"ShellSortFunc ----{v0} -/mulriple = {v0.TotalSeconds * 1000} ---{isSort} ");
+
+            v0 = ShellSort.ShellSortFunc(listA[5]);
+            isSort = Util.IsSortForInt(listA[5]);
+            Console.WriteLine($"ShellSortFunc ----{v0} -/mulriple = {v0.TotalSeconds * 1000} ---{isSort} ");
+
+            
+
+
             int N = 20;
             //
 

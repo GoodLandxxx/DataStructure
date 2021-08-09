@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure.Sort
 {
-    public class BubbleSort
+    public class Bubble
     {
         /// <summary>
         /// 

@@ -37,9 +37,10 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sort\BubbleSort.cs" />
-    <Compile Include="Sort\InsertionSorts.cs" />
-    <Compile Include="Sort\SelectionSort.cs" />
+    <Compile Include="Sort\Bubble.cs" />
+    <Compile Include="Sort\Insertions.cs" />
+    <Compile Include="Sort\Merge.cs" />
+    <Compile Include="Sort\Selection.cs" />
     <Compile Include="Sort\ShellSort.cs" />
     <Compile Include="Sort\Sort.cs" />
     <Compile Include="Tree\BinarySearch.cs" />
