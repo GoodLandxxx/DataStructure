@@ -35,11 +35,18 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <Folder Include="Queue\" />
+    <Folder Include="Stack\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Link\LinkDbNode.cs" />
+    <Compile Include="Link\LinkNode.cs" />
+    <Compile Include="Node\DbNode.cs" />
+    <Compile Include="Node\Node.cs" />
     <Compile Include="Sort\Bubble.cs" />
     <Compile Include="Sort\Insertions.cs" />
     <Compile Include="Sort\Merge.cs" />
+    <Compile Include="Sort\Quick.cs" />
     <Compile Include="Sort\Selection.cs" />
     <Compile Include="Sort\ShellSort.cs" />
     <Compile Include="Sort\Sort.cs" />

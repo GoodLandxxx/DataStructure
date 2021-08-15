@@ -10,8 +10,9 @@ namespace DataStructureInstanceTest
     {
         static void Main(string[] args)
         {
+            LinkTest.LinkedListTest();
 
-           
+
 
             const int count = 50000;
             int max = 100000;
@@ -38,8 +39,11 @@ namespace DataStructureInstanceTest
 
             var array = new int[10] { 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, };
             Merge.MergeSort(array);
-            var v0 = Bubble.BubbleSortFunc(listA[0]);
+            var array2 = new int[10] {  9, 8, 7, 6, 5, 9,4, 3, 2, 1, };
+            Quick.QuickSort(listA[0]);
             var isSort = Util.IsSortForInt(listA[0]);
+            var v0 = Bubble.BubbleSortFunc(listA[0]);
+             isSort = Util.IsSortForInt(listA[0]);
             Console.WriteLine($"BubbleSortFunc --{v0} -/mulriple = {v0.TotalSeconds*1000},---{isSort} ");
 
             v0 = Bubble.BubbleSortFuncOpt(listA[1]);

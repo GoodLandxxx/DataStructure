@@ -14,7 +14,6 @@ namespace DataStructure.Sort
         {
 
             var startTime = DateTime.Now;
-            int o = 1;
             for (int i = 1; i < arr.Length; i++)
             {
                 int position ;
@@ -22,7 +21,6 @@ namespace DataStructure.Sort
                 for(position =i; position > 0 && arr[position-1] >val; position--)
                 {
                     arr[position] = arr[position - 1];
-                    o++;
                 }
                 arr[position] = val;
             }
